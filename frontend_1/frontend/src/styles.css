@@ -323,6 +323,10 @@
   height: 24rem;
 }
 
+.h-500 {
+  height: 500px;
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -355,5 +359,318 @@
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
+}
+
+/* HOPE FOR ALL Design Styles */
+.bg-dark-blue {
+  background-color: #1e3a5f;
+}
+
+.bg-dark-gray {
+  background-color: #374151;
+}
+
+.bg-orange {
+  background-color: #f97316;
+}
+
+.bg-orange:hover {
+  background-color: #ea580c;
+}
+
+.text-orange {
+  color: #f97316;
+}
+
+/* Header Styles */
+.header-container {
+  background-color: #1e3a5f;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.help-button {
+  background-color: #f97316;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.help-button:hover {
+  background-color: #ea580c;
+}
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Section Headers */
+.section-header {
+  background-color: #374151;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.section-header-blue {
+  background-color: #1e3a5f;
+}
+
+.section-content {
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+/* Live Incident Updates */
+.incident-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.incident-item {
+  color: white;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.incident-item:last-child {
+  border-bottom: none;
+}
+
+/* To-Do List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-checked {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.add-task {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.add-task-icon {
+  width: 20px;
+  height: 20px;
+  color: #2563eb;
+}
+
+/* Chat Support */
+.chat-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #16a34a;
+  border-radius: 50%;
+}
+
+.chat-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.chat-message-label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.chat-message-text {
+  color: #6b7280;
+}
+
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+}
+
+.attachment-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.chat-send-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.chat-send-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Map Overlay */
+.map-container-wrapper {
+  position: relative;
+}
+
+.map-search-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  width: calc(100% - 2rem);
+  max-width: 400px;
+}
+
+/* Map Markers - Custom colors */
+.marker-shelter {
+  color: #f97316;
+}
+
+.marker-resource {
+  color: #2563eb;
+}
+
+/* Custom Marker Styles */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Space utilities */
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
 }
 

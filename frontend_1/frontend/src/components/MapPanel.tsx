@@ -57,25 +57,35 @@ export default function MapPanel() {
 
   const center: [number, number] = position ? [position.lat, position.lng] : [20, 0];
 
+  // Create custom icons for different marker types
+  const createCustomIcon = (color: string) => {
+    return L.divIcon({
+      className: 'custom-marker',
+      html: `<div style="background-color: ${color}; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 24],
+    });
+  };
+
+  const shelterIcon = createCustomIcon('#f97316'); // Orange
+  const resourceIcon = createCustomIcon('#2563eb'); // Blue
+
   return (
-    <div>
-      <div className="mb-3 flex items-center justify-between">
-        <div>
-          <span className="text-sm text-gray-600 mr-3">Map view</span>
-          <button className="px-2 py-1 text-sm border rounded mr-2" onClick={async () => {
-            const pos = await getCurrentPosition();
-            if (pos) setPosition(pos);
-          }}>
-            Recenter
-          </button>
-          <button className="px-2 py-1 text-sm border rounded" onClick={() => setShowRadius(s => !s)}>
-            Toggle Radius
-          </button>
+    <div className="map-container-wrapper">
+      <div className="map-search-overlay">
+        <div className="search-bar">
+          <svg className="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search Location..."
+          />
         </div>
-        <div className="text-sm text-gray-500">{position ? `Lat ${position.lat.toFixed(4)}, Lng ${position.lng.toFixed(4)}` : 'No location'}</div>
       </div>
 
-      <div className="h-96 rounded overflow-hidden">
+      <div className="h-500 rounded overflow-hidden" style={{ marginTop: '0' }}>
         <MapContainer center={center} zoom={13} style={{ height: '100%', width: '100%' }}>
           <TileLayer
             attribution='&copy; OpenStreetMap contributors'
@@ -84,7 +94,7 @@ export default function MapPanel() {
           {position && <Recenter lat={position.lat} lng={position.lng} />}
           {position && (
             <>
-              <Marker position={[position.lat, position.lng]}>
+              <Marker position={[position.lat, position.lng]} icon={resourceIcon}>
                 <Popup>
                   Your position
                 </Popup>
@@ -95,8 +105,12 @@ export default function MapPanel() {
             </>
           )}
 
-          {incidents.map((inc) => (
-            <Marker key={inc.id} position={[inc.lat, inc.lng]}>
+          {incidents.map((inc, index) => (
+            <Marker 
+              key={inc.id} 
+              position={[inc.lat, inc.lng]} 
+              icon={index % 2 === 0 ? shelterIcon : resourceIcon}
+            >
               <Popup>
                 <div>
                   <div className="font-semibold">{inc.title}</div>

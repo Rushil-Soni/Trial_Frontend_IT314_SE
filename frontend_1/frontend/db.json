@@ -22,6 +22,16 @@
       ]
     },
     {
+      "id": "rs69",
+      "username": "rushil",
+      "password": "roso",
+      "role": "responder",
+      "permissions": [
+        "view_responder",
+        "view_home"
+      ]
+    },
+    {
       "id": "c057",
       "username": "sheel",
       "password": "123456",

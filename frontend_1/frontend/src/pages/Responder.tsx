@@ -1,28 +1,35 @@
 // src/pages/Responder.tsx
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import CommunicationPanel from '../components/CommunicationPanel';
+import ResponderHeader from '../components/ResponderHeader';
 import MapPanel from '../components/MapPanel';
+import LiveIncidentUpdates from '../components/LiveIncidentUpdates';
+import ToDoList from '../components/ToDoList';
+import LiveChatSupport from '../components/LiveChatSupport';
 import '../styles.css';
 
 export default function Responder() {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 bg-white rounded shadow p-4">
-          <h1 className="text-2xl font-semibold mb-2">Responder Dashboard</h1>
-          <p className="text-sm text-gray-600 mb-4">
-            Welcome <span className="font-medium">{user?.username}</span> — Role: <span className="font-medium">{user?.role}</span>
-          </p>
-          <MapPanel />
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <ResponderHeader />
+      <div className="p-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Left Column */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="bg-white rounded shadow">
+              <MapPanel />
+            </div>
+            <LiveIncidentUpdates />
+          </div>
 
-        <aside className="bg-white rounded shadow p-4">
-          <h2 className="text-lg font-semibold mb-2">Communications</h2>
-          <CommunicationPanel />
-        </aside>
+          {/* Right Column */}
+          <div className="space-y-4">
+            <ToDoList />
+            <LiveChatSupport />
+          </div>
+        </div>
       </div>
     </div>
   );
