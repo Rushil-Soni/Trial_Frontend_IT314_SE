@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // adjust the import path if needed
+import '../styles.css';
 
 export default function Landing() {
   const { user, logout } = useAuth(); // get current user from context
